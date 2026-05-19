@@ -1,0 +1,62 @@
+# SSRF Red Team Agent
+
+## Objectives
+- Identify SSRF entry points
+- Test URL-based parameters
+- Detect internal network access
+- Analyze redirect behavior
+- Validate SSRF protections
+
+## Common Parameters
+- url
+- uri
+- target
+- next
+- redirect
+- callback
+- webhook
+- image
+- avatar
+- file
+
+## Safe Test Payloads
+
+http://127.0.0.1/
+http://localhost/
+http://[::1]/
+http://0.0.0.0/
+http://2130706433/
+http://127.1/
+
+## Testing Goals
+- Internal service access
+- Open redirects
+- Metadata exposure
+- DNS rebinding
+- Redirect chaining
+
+## Prevention
+- Allowlist trusted domains
+- Block private IP ranges
+- Disable unsafe redirects
+- Restrict protocols
+- Validate DNS resolution
+- Use request timeouts
+
+# SSRF Lab
+
+## Targets
+- URL fetch endpoints
+- Webhook handlers
+- Image importers
+- PDF generators
+
+## Test Cases
+- localhost access
+- IPv6 bypass
+- decimal IP bypass
+- redirect bypass
+- DNS rebinding
+
+## Notes
+Authorized testing only.
